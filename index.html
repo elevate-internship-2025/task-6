@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Aurora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="brand-wrap">
+      <div class="brand">AURORA</div>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section class="contact-hero">
+      <div class="hero-content">
+        <div class="hero-left">
+          <h1><span class="accent">Say hello</span> — we’d love to hear from you</h1>
+          <p class="muted">Have a question or want to work together? Drop a note — we’ll get back within 24 hours.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="container">
+        <form id="contactForm" novalidate>
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" />
+          <div class="error" id="error-name" aria-live="polite"></div>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
+          <div class="error" id="error-email" aria-live="polite"></div>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message..."></textarea>
+          <div class="error" id="error-message" aria-live="polite"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send Message</button>
+            <button type="reset" class="btn ghost">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">© 2025 Aurora • Contact Form</footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

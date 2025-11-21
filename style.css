@@ -1,0 +1,190 @@
+:root{
+  --bg1: #0f172a;
+  --bg2: #0f172a;
+  --accent-a: #7c3aed;
+  --accent-b: #06b6d4;
+  --accent-c: #f97316;
+  --muted:#94a3b8;
+  --card:#0b1220;
+  --glass: rgba(255,255,255,0.06);
+  --radius:14px;
+  --max-width:900px;
+}
+
+*{ box-sizing: border-box; }
+html,body { height: 100%; }
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 6%),
+              radial-gradient(900px 450px at 90% 85%, rgba(6,182,212,0.09), transparent 8%),
+              linear-gradient(180deg,#071033 0%, #07192c 60%);
+  color: #e6eef8;
+  padding: 28px 16px;
+}
+
+/* Header (brand top-right) */
+.page-header{
+  position: relative;
+  height: 72px;
+  max-width: var(--max-width);
+  margin: 0 auto 18px;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.brand-wrap { margin-right: 8px; padding-right: 4px; }
+
+.brand{
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: transparent;
+  background-image: linear-gradient(90deg, #fff 0%, #ffe67a 10%, #ff7ab6 35%, #7c3aed 60%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: hue 8s linear infinite;
+  text-shadow: 0 6px 20px rgba(7,10,25,0.6);
+}
+
+.brand::after{
+  content: "";
+  position:absolute;
+  inset:-6px -10px -10px -10px;
+  background: radial-gradient(circle at 20% 20%, rgba(124,58,237,0.14), transparent 8%),
+              radial-gradient(circle at 80% 80%, rgba(6,182,212,0.09), transparent 8%);
+  filter: blur(12px);
+  z-index:-1;
+  border-radius:12px;
+}
+
+/* Page container */
+.page{
+  max-width: var(--max-width);
+  margin:0 auto;
+}
+
+/* Contact Hero */
+.contact-hero{
+  padding:28px;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  margin-bottom:20px;
+}
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-left h1{
+  margin:0;
+  font-size: clamp(20px, 3.6vw, 36px);
+  color:#f8fafc;
+}
+.muted{ color:var(--muted); margin-top:8px; }
+
+/* Form Card */
+.container{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:28px;
+  border-radius:16px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 20px 60px rgba(2,6,23,0.6);
+}
+
+/* Form fields */
+label{
+  display:block;
+  margin-top:14px;
+  font-weight:700;
+  color:#cfe7ff;
+}
+input, textarea{
+  width:100%;
+  padding:12px 14px;
+  margin-top:8px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+  color:#e6eef8;
+  outline:none;
+  transition:0.2s;
+}
+input::placeholder, textarea::placeholder{ color:rgba(230,238,248,0.45); }
+
+input:focus, textarea:focus{
+  border-color: rgba(124,58,237,0.9);
+  box-shadow:0 8px 28px rgba(124,58,237,0.12);
+  transform: translateY(-1px);
+}
+
+/* Errors */
+.error{ color:#ffb4b4; font-size:0.92rem; margin-top:6px; min-height:18px; }
+.input-error{ border-color:rgba(239,68,68,0.9)!important; }
+
+/* Buttons */
+.form-actions{
+  margin-top:20px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:800;
+  color:#051124;
+  border:none;
+  transition:0.2s;
+}
+.btn.primary{
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  color:#fff;
+}
+.btn.primary:hover{ transform:translateY(-3px); }
+
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+  color:#e6eef8;
+}
+.btn.ghost:hover{ transform:translateY(-2px); }
+
+/* Footer */
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  margin-top:26px;
+  font-size:0.9rem;
+}
+
+/* Mobile */
+@media (max-width:740px){
+  .brand{ font-size:26px; }
+  .container{ padding:20px; }
+  .contact-hero{ padding:20px; }
+}
+
+/* Tiny screens */
+@media (max-width:420px){
+  .brand{ font-size:21px; }
+  .btn{ width:100%; }
+}
+
+/* Gradient animation */
+@keyframes hue{
+  0%{ filter:hue-rotate(0deg); }
+  50%{ filter:hue-rotate(25deg); }
+  100%{ filter:hue-rotate(0deg); }
+}
